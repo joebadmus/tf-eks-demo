@@ -20,7 +20,8 @@ resource "aws_subnet" "subnet-a" {
   map_public_ip_on_launch = true
 
   tags = {
-    "Name" = "public-a"
+    "Name"                         = "public-a"
+    "kubernetes.io/cluster/my-eks" = "shared"
   }
 
 
@@ -33,7 +34,8 @@ resource "aws_subnet" "subnet-b" {
   map_public_ip_on_launch = true
 
   tags = {
-    "Name" = "public-b"
+    "Name"                         = "public-b"
+    "kubernetes.io/cluster/my-eks" = "shared"
   }
 }
 

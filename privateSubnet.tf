@@ -33,7 +33,8 @@ resource "aws_subnet" "subnet-c" {
   map_public_ip_on_launch = false
 
   tags = {
-    "Name" = "private-a"
+    "Name"                         = "private-a"
+    "kubernetes.io/cluster/my-eks" = "shared"
   }
 
 
@@ -46,7 +47,8 @@ resource "aws_subnet" "subnet-d" {
   map_public_ip_on_launch = false
 
   tags = {
-    "Name" = "private-b"
+    "Name"                         = "private-b"
+    "kubernetes.io/cluster/my-eks" = "shared"
   }
 }
 

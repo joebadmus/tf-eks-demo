@@ -19,7 +19,7 @@ module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "my-eks"
   cluster_version = "1.17"
-  subnets         = [aws_subnet.subnet-a.id, aws_subnet.subnet-d.id]
+  subnets         = [aws_subnet.subnet-a.id, aws_subnet.subnet-c.id, aws_subnet.subnet-d.id]
   vpc_id          = aws_vpc.main_vpc.id
 
   node_groups = {
@@ -39,7 +39,7 @@ module "eks" {
     }
 
     private = {
-      subnets          = [aws_subnet.subnet-d.id]
+      subnets          = [aws_subnet.subnet-c.id, aws_subnet.subnet-d.id]
       desired_capacity = 1
       max_capacity     = 10
       min_capacity     = 1
